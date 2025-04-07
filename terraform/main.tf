@@ -108,7 +108,7 @@ resource "aws_s3_bucket_ownership_controls" "logging_ownership" {
   depends_on = [aws_s3_bucket.s3_logging_bucket]
 }
 
-resource "aws_s3_bucket_acl" "static_acl" {
+resource "aws_s3_bucket_acl" "logging_acl" {
   depends_on = [aws_s3_bucket_ownership_controls.logging_ownership]
 
   bucket = aws_s3_bucket.s3_logging_bucket.id
