@@ -9,7 +9,7 @@ resource "aws_s3_bucket" "s3_static_bucket" {
 }
 
 resource "aws_s3_bucket_ownership_controls" "static_ownership" {
-  bucket = aws_s3_bucket.exas3_static_bucketmple.id
+  bucket = aws_s3_bucket.s3_static_bucket.id
   rule {
     object_ownership = "BucketOwnerPreferred"
   }
