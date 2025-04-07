@@ -40,7 +40,7 @@ resource "aws_s3_bucket_website_configuration" "static_config" {
 }
 
 resource "aws_iam_policy" "static_s3_policy" {
-  name        = "s3Policy"
+  name        = "s3Policy-${var.env}"
   description = "My static s3 policy"
 
   policy = jsonencode({
@@ -64,7 +64,7 @@ resource "aws_iam_policy" "static_s3_policy" {
 }
 
 resource "aws_iam_role" "static_s3_role" {
-  name = "s3Role"
+  name = "s3Role-${var.env}"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
