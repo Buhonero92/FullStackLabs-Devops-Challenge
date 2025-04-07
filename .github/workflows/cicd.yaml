@@ -155,7 +155,10 @@ jobs:
       - name: Terraform apply
         run: |
           cd terraform
-          terraform apply --auto-approve --var "env=${{ needs.config.outputs.deployment_env }}"  
+          terraform destroy --auto-approve --var "env=${{ needs.config.outputs.deployment_env }}"  
+
+        # terraform apply --auto-approve --var "env=${{ needs.config.outputs.deployment_env }}"  
+          
 
 
   deployment:
